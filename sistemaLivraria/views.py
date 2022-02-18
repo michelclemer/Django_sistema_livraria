@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from .models import Livro
 
 
 # Create your views here.
@@ -13,7 +13,9 @@ def about(request):
 
 
 def livros(request):
-    return render(request, 'livros/index.html')
+    livros = Livro.objects.all()
+    print(livros)
+    return render(request, 'livros/index.html', {'livros': livros})
 def criar(request):
     return render(request, 'livros/criar.html')
 def editar(request):
