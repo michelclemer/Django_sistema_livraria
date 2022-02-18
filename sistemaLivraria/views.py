@@ -7,8 +7,12 @@ from django.http import HttpResponse
 
 
 def inicio(request):
-    return HttpResponse("<h1> Bem vindo a Biblioteca</h1>")
-
-
+    return render(request, 'paginas/inicio.html')
 def about(request):
     return render(request, 'paginas/about.html')
+
+
+def livros(request):
+    return render(request, 'livros/index.html')
+def criar(request):
+    return render(request, 'livros/criar.html')
