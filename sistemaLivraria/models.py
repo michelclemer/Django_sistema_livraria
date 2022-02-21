@@ -6,9 +6,9 @@ from django.db import models
 
 class Livro(models.Model):
     id = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='imagens/',verbose_name="image",null=True)
-    description = models.TextField(verbose_name="description", null=True)
+    title = models.CharField(max_length=100, verbose_name="Título")
+    image = models.ImageField(upload_to='imagens/',verbose_name="Imagem",null=True)
+    description = models.TextField(verbose_name="Descrição", null=True)
 
     def __str__(self) -> str:
         fila = "Titulo: " + self.title + " - "+ "Description: "+ self.description
